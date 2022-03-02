@@ -4,8 +4,8 @@
 
 ## Env
  - seed ubuntu 20.0.4
- - host 10.0.2.0/24 
-   - attakcer 10.0.2.5
+ - Network 10.0.2.0/24
+   - host 10.0.2.5 
 
 ## Build
 ``` 
