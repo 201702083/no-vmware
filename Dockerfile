@@ -5,4 +5,5 @@ FROM handsonsecurity/seed-ubuntu:large
 RUN apt-get update
 RUN apt-get install sudo vim elinks traceroute -y
 
+RUN su seed
 WORKDIR /home
