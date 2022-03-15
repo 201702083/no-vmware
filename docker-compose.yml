@@ -9,7 +9,7 @@ services:
         - ALL
     privileged: true
     volumes:
-        - ./share:/share
+        - ./attacker:/attacker
     network_mode: host
   host:
     build:
@@ -18,6 +18,8 @@ services:
     tty: true
     cap_add:
         - ALL
+    volumes:
+        - ./host:/host
     networks:
       net-10.0.2.0:
         ipv4_address: 10.0.2.5
