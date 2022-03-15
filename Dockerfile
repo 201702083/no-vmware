@@ -2,10 +2,10 @@
 FROM handsonsecurity/seed-ubuntu:large 
 
 #2 update & install utilities
-RUN apt-get update
-RUN apt-get install sudo vim elinks traceroute gedit -y
+RUN apt-get update && apt-get install sudo vim elinks traceroute gcc -y
 RUN echo "root:root" | chpasswd
 RUN echo "seed:seed" | chpasswd
 
+COPY sudoers /etc
 USER seed
 WORKDIR /home
