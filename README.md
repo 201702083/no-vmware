@@ -24,3 +24,4 @@ or
 ./reset.sh
 ```
 
+### Kali linux 로 설정 중 . . .
