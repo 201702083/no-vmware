@@ -12,12 +12,14 @@ services:
         - ./attacker:/attacker
     network_mode: host
   host:
+#    image: ubuntu:20.04
     build:
       context: ./
     container_name: host-10.0.2.5
     tty: true
     cap_add:
         - ALL
+    privileged: true
     volumes:
         - ./host:/host
     networks:
