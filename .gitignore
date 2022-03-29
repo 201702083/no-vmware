@@ -1,0 +1,6 @@
+#dummy
+.DS_Store
+
+#share directory
+/host
+/attacker
