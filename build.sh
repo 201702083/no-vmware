@@ -22,7 +22,7 @@ echo "my os is $THIS_OS"
 
 if [ "$1" == "host" ] ; then
 
-  docker compose up -d --build host
+  docker compose build --no-cache && docker compose up -d host
 
   echo "Connected to seed ubuntu : host"
 
