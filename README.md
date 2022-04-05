@@ -3,7 +3,7 @@
 > Requirement : docker , docker-compose
 
 ## Env
- - seed ubuntu 20.0.4
+ - 32 bit ubuntu 20.04
  - Network 10.0.2.0/24
    - host 10.0.2.5 
  
@@ -24,4 +24,3 @@ or
 ./reset.sh
 ```
 
-### Kali linux 로 설정 중 . . .
