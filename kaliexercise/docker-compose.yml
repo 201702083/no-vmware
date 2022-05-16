@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  attacker:
+    build:
+      context: ./
+    container_name: kali-attacker
+    tty: true
+    cap_add:
+        - ALL
+    privileged: true
+    volumes:
+        - ./kali:/kali
+    network_mode: host
+  host:
+    build:
+      context: ./
+    container_name: kali-victim
+#command: sh /kali/victim/setup.sh
+    tty: true
+    cap_add:
+        - ALL
+    privileged: true
+    ports:
+        - "4000:80"
+    volumes:
+        - ./kali:/kali
+    networks:
+      net-10.0.2.0:
+        ipv4_address: 10.0.2.5
+
+networks:
+  net-10.0.2.0:
+    name: net-10.0.2.0
+    ipam:
+        config:
+          - subnet: 10.0.2.0/24
