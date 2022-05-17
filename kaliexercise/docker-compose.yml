@@ -11,12 +11,13 @@ services:
     privileged: true
     volumes:
         - ./kali:/kali
-    network_mode: host
+    networks:
+      net-10.0.2.0:
+        ipv4_address: 10.0.2.14
   host:
     build:
       context: ./
     container_name: kali-victim
-#command: sh /kali/victim/setup.sh
     tty: true
     cap_add:
         - ALL
@@ -27,7 +28,7 @@ services:
         - ./kali:/kali
     networks:
       net-10.0.2.0:
-        ipv4_address: 10.0.2.5
+        ipv4_address: 10.0.2.15
 
 networks:
   net-10.0.2.0:
