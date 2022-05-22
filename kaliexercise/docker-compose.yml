@@ -16,11 +16,13 @@ services:
         ipv4_address: 10.0.2.14
   host:
     build:
+      network: host
       context: ./
     container_name: kali-victim
     tty: true
     cap_add:
         - ALL
+# network_mode: host
     privileged: true
     ports:
         - "4000:80"
