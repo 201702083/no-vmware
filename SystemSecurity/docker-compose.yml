@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  attacker:
+    build:
+      context: ./
+    tty: true
+    cap_add:
+        - ALL
+    privileged: true
+    volumes:
+        - ./attacker:/attacker
+    network_mode: host
+  host:
+    build:
+      context: ./
+    container_name: host-10.0.2.5
+    tty: true
+    cap_add:
+        - ALL
+    privileged: true
+    volumes:
+        - ./host:/host
+    networks:
+      net-10.0.2.0:
+        ipv4_address: 10.0.2.5
+
+networks:
+  net-10.0.2.0:
+    name: net-10.0.2.0
+    ipam:
+        config:
+          - subnet: 10.0.2.0/24
