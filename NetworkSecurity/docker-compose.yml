@@ -9,6 +9,8 @@ services:
     cap_add:
         - ALL
     privileged: true
+    ports:
+      - "4001:80"
     volumes:
         - ./kali:/kali
     networks:
